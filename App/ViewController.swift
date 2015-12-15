@@ -22,7 +22,6 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 	@IBOutlet var volumeSlider: MPVolumeView?
 
 	var player: AVPlayer?
-	let settings: Settings = HopeUA()
 
 	var playing:Bool = false
 	{
@@ -142,32 +141,38 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
     }
     
     @IBAction func openWebsite(sender: UIButton) {
-        let url = NSURL(string:settings.siteLink())
+        let url = NSURL(string: Config.Urls.Website)
         openURL(url)
     }
 
 	@IBAction func openFacebook()
 	{
-		let url = NSURL(string: settings.facebookLink())
+		let url = NSURL(string: Config.Urls.Facebook)
 		openURL(url)
 	}
 
 	@IBAction func openPodster()
 	{
-		let url = NSURL(string: settings.podStepLink())
+		let url = NSURL(string: Config.Urls.Podster)
 		openURL(url)
 	}
 
 	@IBAction func openTwitter()
 	{
-		let url = NSURL(string: settings.twitterLink())
+		let url = NSURL(string: Config.Urls.Twitter)
 		openURL(url)
 	}
 
 	@IBAction func openVK()
 	{
-		let url = NSURL(string: settings.vkLink())
-		openURL(url)
+        let appURL     = NSURL(string: Config.Urls.Vk.App)!
+        let browserURL = NSURL(string: Config.Urls.Vk.Browser)!
+
+        if UIApplication.sharedApplication().canOpenURL(appURL){
+            UIApplication.sharedApplication().openURL(appURL)
+        } else {
+            UIApplication.sharedApplication().openURL(browserURL)
+        }
 	}
 
 
@@ -232,7 +237,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
 		if(AFNetworkReachabilityManager.sharedManager().reachable)
 		{
-			let url = NSURL(string: settings.streamLink())
+			let url = NSURL(string: Config.Stream.Url)
 			player = AVPlayer(URL: url!)
 			player?.play()
 			playing = true
@@ -262,7 +267,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 		types?.insert("text/plain")
 		responseSerializer.acceptableContentTypes = types
 		manager.responseSerializer = responseSerializer
-		let url = NSURL(string: "http://stream.hope.ua:7777/currentsong?sid=21")
+		let url = NSURL(string: Config.Stream.Info)
 		let request = NSURLRequest(URL: url!);
 		let task = manager.dataTaskWithRequest(request) { (response, data, error) -> Void in
 			if ((data as? NSData) != nil)
