@@ -165,7 +165,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нас завжди приємно слухати..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jvK-Vy-Yff" userLabel="SubText">
-                                        <rect key="frame" x="135" y="90.5" width="330" height="21.5"/>
+                                        <rect key="frame" x="135" y="85" width="330" height="21.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="18"/>
                                         <color key="textColor" red="0.396078431372549" green="0.41960784313725491" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -189,7 +189,7 @@
                                     <constraint firstItem="bSE-7p-1wV" firstAttribute="width" secondItem="RFG-Ij-EKB" secondAttribute="width" multiplier="0.5" id="Z6g-AL-fwh"/>
                                     <constraint firstItem="rcf-yk-Xcf" firstAttribute="centerX" secondItem="RFG-Ij-EKB" secondAttribute="centerX" id="epx-0o-xEj"/>
                                     <constraint firstItem="xIy-XF-Q6t" firstAttribute="centerX" secondItem="RFG-Ij-EKB" secondAttribute="centerX" id="fY7-Oe-fca"/>
-                                    <constraint firstItem="jvK-Vy-Yff" firstAttribute="top" secondItem="bSE-7p-1wV" secondAttribute="bottom" id="oU3-YO-2qj"/>
+                                    <constraint firstItem="jvK-Vy-Yff" firstAttribute="top" secondItem="bSE-7p-1wV" secondAttribute="bottom" constant="-5" id="oU3-YO-2qj"/>
                                     <constraint firstItem="jvK-Vy-Yff" firstAttribute="width" secondItem="RFG-Ij-EKB" secondAttribute="width" multiplier="0.55" id="uwq-kq-0TV"/>
                                 </constraints>
                             </view>
