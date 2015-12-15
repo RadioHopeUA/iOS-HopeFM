@@ -13,5 +13,9 @@
 "Social.Feedback" = "Feedback";
 "Social.Cancel"   = "Cancel";
 
+"Remote.Title"    = "Hope.FM";
+"Remote.Subtitle" = "Youth Radio";
+
 "Error.Player"  = "Player error";
 "Error.Network" = "Please check network connection";
+

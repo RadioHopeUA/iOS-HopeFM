@@ -23,79 +23,72 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 	@IBOutlet var playTextLabel: UILabel?
 	@IBOutlet var volumeSlider: MPVolumeView?
 
-	var player: AVPlayer?
-
-	var playing: Bool = false {
-		didSet {
-			playButton?.selected = playing
-		}
-	}
-
 	// MARK: - View cirle -
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 
-        // TODO 
         // Setup Volume Slider
         volumeSlider?.setVolumeThumbImage(UIImage(named: "volumeThumb"), forState: .Normal)
         volumeSlider?.setMinimumVolumeSliderImage(UIImage(named: "volumeMinimum")?.resizableImageWithCapInsets(UIEdgeInsetsMake(0, 3, 0, 0)), forState: .Normal)
         volumeSlider?.setMaximumVolumeSliderImage(UIImage(named: "volumeMaximum")?.resizableImageWithCapInsets(UIEdgeInsetsMake(0, 0, 0, 3)), forState: .Normal)
         volumeSlider?.showsRouteButton = false
 
-		setupReachabilityObserving()
+        // Setup remote controls
+        if NSClassFromString("MPNowPlayingInfoCenter") != nil {
+            let songInfo: NSDictionary = [
+                MPMediaItemPropertyTitle: "Remote.Title".localized,
+                MPMediaItemPropertyArtist: "Remote.Subtitle".localized
+            ]
+            MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = songInfo as! [String : AnyObject]
+        }
+        
+        // Setup background playing
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            UIApplication.sharedApplication().beginReceivingRemoteControlEvents()
+        } catch {
+            print("AVAudioSession setCategory error")
+        }
 
-		try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+        // Setup network reachability
+        AFNetworkReachabilityManager.sharedManager().startMonitoring()
+        AFNetworkReachabilityManager.sharedManager().setReachabilityStatusChangeBlock { (status: AFNetworkReachabilityStatus) -> Void in
+            switch status {
+            case .NotReachable:
+                print("Network not reachable")
+                if RadioPlayer.sharedInstance.currentlyPlaying() {
+                    self.stopPlaying()
+                }
+            case .ReachableViaWiFi, .ReachableViaWWAN:
+                print("Network is ok")
+                if RadioPlayer.sharedInstance.currentlyPlaying() {
+                    self.startPlaying(true)
+                }
+            default:
+                break
+            }
+        }
 
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("playerDidEnded:"), name: AVPlayerItemDidPlayToEndTimeNotification, object: player)
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("playerDidFailed:"), name: AVPlayerItemFailedToPlayToEndTimeNotification, object: player)
-
-		self.view.layoutIfNeeded()
+        self.view.layoutIfNeeded()
 	}
 
+    // TODO ??
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
-
 		self.volumeSlider?.layer.removeAllAnimations()
 	}
 
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
-		UIApplication.sharedApplication().beginReceivingRemoteControlEvents()
 		self.becomeFirstResponder()
 	}
 
-	override func preferredStatusBarStyle() -> UIStatusBarStyle {
-		return UIStatusBarStyle.LightContent
-	}
-
-	deinit {
-		player?.currentItem?.removeObserver(self, forKeyPath: "status")
-		NSNotificationCenter.defaultCenter().removeObserver(self)
-	}
-
-	// MARK: - Setup -
-
-	func setupReachabilityObserving() {
-		AFNetworkReachabilityManager.sharedManager().startMonitoring()
-		AFNetworkReachabilityManager.sharedManager().setReachabilityStatusChangeBlock { (status: AFNetworkReachabilityStatus) -> Void in
-			switch status {
-			case .NotReachable:
-                if self.playing {
-                    self.startPlaying()
-                }
-					// self.stopPlaying()
-					// self.showError()
-			case .ReachableViaWiFi, .ReachableViaWWAN:
-				if self.playing {
-					self.startPlaying()
-				}
-			default:
-				 break
-			}
-		}
-	}
+//	deinit {
+//		player?.currentItem?.removeObserver(self, forKeyPath: "status")
+//		NSNotificationCenter.defaultCenter().removeObserver(self)
+//	}
 
 	// MARK: - Actions -
 
@@ -163,7 +156,6 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         }
 	}
 
-
 	@IBAction func sendMail() {
 		if MFMailComposeViewController.canSendMail() {
 			let mailVC = MFMailComposeViewController()
@@ -183,7 +175,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 	}
 
 	@IBAction func playOrPause(sender: UIButton) -> () {
-		if playing {
+		if RadioPlayer.sharedInstance.currentlyPlaying() {
 			stopPlaying()
         } else {
 			startPlaying()
@@ -191,41 +183,39 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 	}
 
 	@IBAction func updateVolume(sender: UISlider) {
-		player?.volume = sender.value
+		RadioPlayer.sharedInstance.setVolume(sender.value)
 	}
 
-	func playerDidEnded(not: NSNotification) {
-		stopPlaying()
-	}
+//	func playerDidEnded(not: NSNotification) {
+//		stopPlaying()
+//        print("Player ended")
+//	}
 
-	func playerDidFailed(not: NSNotification) {
-		stopPlaying()
-		showError("Error.Player".localized)
-	}
+//	func playerDidFailed(not: NSNotification) {
+//		stopPlaying()
+//        print("Player failed")
+//		showError("Error.Player".localized)
+//	}
 
-	func startPlaying() {
-		if player != nil {
-			player?.pause()
-			player = nil
-		}
-
+    func startPlaying(reset: Bool = false) {
+        print("Play start")
 		if AFNetworkReachabilityManager.sharedManager().reachable {
-			player = AVPlayer(URL: Config.Stream.Url!)
-			player?.play()
-			playing = true
+            if reset {
+                RadioPlayer.sharedInstance.reset()
+            }
+            RadioPlayer.sharedInstance.play()
 			beginRecurciveUpdateTitleUpdate()
+            playButton?.selected = true
 		} else {
 			showError("Error.Network".localized)
 		}
 	}
 
 	func stopPlaying() {
-		if player != nil {
-			player?.pause()
-			player = nil
-		}
-		playing = false
-	}
+        print("Play stop")
+        RadioPlayer.sharedInstance.pause()
+        playButton?.selected = false
+    }
 
 	func beginRecurciveUpdateTitleUpdate() {
 		let manager = AFURLSessionManager()
@@ -246,7 +236,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
 			let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(3 * Double(NSEC_PER_SEC)))
 			dispatch_after(delayTime, dispatch_get_main_queue()) {
-				if self.playing {
+				if RadioPlayer.sharedInstance.currentlyPlaying() {
 					self.beginRecurciveUpdateTitleUpdate()
 				}
 			}
@@ -295,9 +285,10 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 			switch event!.subtype {
 			case UIEventSubtype.RemoteControlPlay:
 				startPlaying()
-
+                print("Remote Play")
 			case UIEventSubtype.RemoteControlPause:
 				stopPlaying()
+                print("Remote Pause")
 			default: break
 			}
 		}

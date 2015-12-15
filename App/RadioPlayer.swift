@@ -14,12 +14,19 @@ class RadioPlayer {
     private var player = AVPlayer(URL: Config.Stream.Url!)
     private var isPlaying = false
     
+    func reset() {
+        print("Inner Play reset")
+        player.replaceCurrentItemWithPlayerItem(AVPlayerItem(URL: Config.Stream.Url!))
+    }
+    
     func play() {
+        print("Inner Play start")
         player.play()
         isPlaying = true
     }
     
     func pause() {
+        print("Inner Play pause")
         player.pause()
         isPlaying = false
     }
@@ -34,5 +41,13 @@ class RadioPlayer {
     
     func currentlyPlaying() -> Bool {
         return isPlaying
+    }
+    
+    func setVolume(volume: Float) {
+        player.volume = volume
+    }
+    
+    func getPlayer() -> AVPlayer {
+        return player
     }
 }

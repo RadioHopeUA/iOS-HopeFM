@@ -13,5 +13,8 @@
 "Social.Feedback" = "Обратная связь";
 "Social.Cancel"   = "Отмена";
 
+"Remote.Title"    = "Hope.FM";
+"Remote.Subtitle" = "Молодежное радио";
+
 "Error.Player"  = "Ошибка плеера";
 "Error.Network" = "Проверьте подключение к сети";
