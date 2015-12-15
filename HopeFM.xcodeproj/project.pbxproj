@@ -1,0 +1,590 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A5839A5D1C1ED66E00787FDD /* RadioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5839A5C1C1ED66E00787FDD /* RadioPlayer.swift */; };
+		A5839A641C1ED7D700787FDD /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5839A631C1ED7D700787FDD /* AFNetworking.framework */; };
+		B353C7F01BFBB1D400DC3CDD /* VolumeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B353C7EF1BFBB1D400DC3CDD /* VolumeSlider.swift */; };
+		B37C38FD1BCD96DB00FFE25D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37C38FC1BCD96DB00FFE25D /* AppDelegate.swift */; };
+		B37C38FF1BCD96DB00FFE25D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37C38FE1BCD96DB00FFE25D /* ViewController.swift */; };
+		B37C39021BCD96DB00FFE25D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B37C39001BCD96DB00FFE25D /* Main.storyboard */; };
+		B37C39041BCD96DB00FFE25D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B37C39031BCD96DB00FFE25D /* Assets.xcassets */; };
+		B37C39071BCD96DB00FFE25D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B37C39051BCD96DB00FFE25D /* LaunchScreen.storyboard */; };
+		B37C392B1BCD9D2400FFE25D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37C392A1BCD9D2400FFE25D /* Color.swift */; };
+		B37C392C1BCD9D2400FFE25D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37C392A1BCD9D2400FFE25D /* Color.swift */; };
+		B37C392D1BCD9D2400FFE25D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37C392A1BCD9D2400FFE25D /* Color.swift */; };
+		B38B337E1BD95FAF00F9C8C8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38B337D1BD95FAF00F9C8C8 /* Settings.swift */; };
+		B38B33801BD96E2B00F9C8C8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B38B337F1BD96E2B00F9C8C8 /* Localizable.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B37C390E1BCD96DC00FFE25D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B37C38F11BCD96DB00FFE25D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B37C38F81BCD96DB00FFE25D;
+			remoteInfo = radio;
+		};
+		B37C39191BCD96DC00FFE25D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B37C38F11BCD96DB00FFE25D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B37C38F81BCD96DB00FFE25D;
+			remoteInfo = radio;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2DE8E1D205D4078E1CF2A1CC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		6B19E7C80A1C40FCBFDA41CB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A5839A5C1C1ED66E00787FDD /* RadioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioPlayer.swift; sourceTree = "<group>"; };
+		A5839A621C1ED74100787FDD /* HopeFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HopeFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5839A631C1ED7D700787FDD /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "Pods/../build/Debug-iphoneos/AFNetworking.framework"; sourceTree = "<group>"; };
+		A5A4A8EE1C1F169600E2E42F /* HopeFM.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HopeFM.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5A4A8EF1C1F169600E2E42F /* HopeFM.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HopeFM.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B353C7EF1BFBB1D400DC3CDD /* VolumeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeSlider.swift; sourceTree = "<group>"; };
+		B37C38FC1BCD96DB00FFE25D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B37C38FE1BCD96DB00FFE25D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B37C39011BCD96DB00FFE25D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B37C39031BCD96DB00FFE25D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B37C39061BCD96DB00FFE25D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B37C39081BCD96DB00FFE25D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B37C392A1BCD9D2400FFE25D /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		B38B337D1BD95FAF00F9C8C8 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		B38B337F1BD96E2B00F9C8C8 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		B38B33831BD9787D00F9C8C8 /* App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = App.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B37C38F61BCD96DB00FFE25D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5839A641C1ED7D700787FDD /* AFNetworking.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B37C390A1BCD96DC00FFE25D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B37C39151BCD96DC00FFE25D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A12C6D7D952023AA2BD0C27D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2DE8E1D205D4078E1CF2A1CC /* Pods.debug.xcconfig */,
+				6B19E7C80A1C40FCBFDA41CB /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B37C38F01BCD96DB00FFE25D = {
+			isa = PBXGroup;
+			children = (
+				A5839A631C1ED7D700787FDD /* AFNetworking.framework */,
+				B37C38FB1BCD96DB00FFE25D /* HopeFM */,
+				A12C6D7D952023AA2BD0C27D /* Pods */,
+				A5839A621C1ED74100787FDD /* HopeFM.app */,
+				A5A4A8EE1C1F169600E2E42F /* HopeFM.xctest */,
+				A5A4A8EF1C1F169600E2E42F /* HopeFM.xctest */,
+			);
+			sourceTree = "<group>";
+		};
+		B37C38FB1BCD96DB00FFE25D /* HopeFM */ = {
+			isa = PBXGroup;
+			children = (
+				B38B33831BD9787D00F9C8C8 /* App.entitlements */,
+				B37C38FC1BCD96DB00FFE25D /* AppDelegate.swift */,
+				B37C38FE1BCD96DB00FFE25D /* ViewController.swift */,
+				B38B337D1BD95FAF00F9C8C8 /* Settings.swift */,
+				B353C7EF1BFBB1D400DC3CDD /* VolumeSlider.swift */,
+				B37C392A1BCD9D2400FFE25D /* Color.swift */,
+				B37C39001BCD96DB00FFE25D /* Main.storyboard */,
+				B37C39031BCD96DB00FFE25D /* Assets.xcassets */,
+				B37C39051BCD96DB00FFE25D /* LaunchScreen.storyboard */,
+				B37C39081BCD96DB00FFE25D /* Info.plist */,
+				B38B337F1BD96E2B00F9C8C8 /* Localizable.strings */,
+				A5839A5C1C1ED66E00787FDD /* RadioPlayer.swift */,
+			);
+			name = HopeFM;
+			path = App;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B37C38F81BCD96DB00FFE25D /* HopeFM */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B37C39211BCD96DC00FFE25D /* Build configuration list for PBXNativeTarget "HopeFM" */;
+			buildPhases = (
+				01E0675282772DCF61621A35 /* Check Pods Manifest.lock */,
+				B37C38F51BCD96DB00FFE25D /* Sources */,
+				B37C38F61BCD96DB00FFE25D /* Frameworks */,
+				B37C38F71BCD96DB00FFE25D /* Resources */,
+				DFDA887A87AB46C9D572F258 /* Embed Pods Frameworks */,
+				C71E85AA051FA03F38D6649C /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HopeFM;
+			productName = radio;
+			productReference = A5839A621C1ED74100787FDD /* HopeFM.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B37C390C1BCD96DC00FFE25D /* HopeFMTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B37C39241BCD96DC00FFE25D /* Build configuration list for PBXNativeTarget "HopeFMTests" */;
+			buildPhases = (
+				B37C39091BCD96DC00FFE25D /* Sources */,
+				B37C390A1BCD96DC00FFE25D /* Frameworks */,
+				B37C390B1BCD96DC00FFE25D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B37C390F1BCD96DC00FFE25D /* PBXTargetDependency */,
+			);
+			name = HopeFMTests;
+			productName = radioTests;
+			productReference = A5A4A8EE1C1F169600E2E42F /* HopeFM.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B37C39171BCD96DC00FFE25D /* HopeFMUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B37C39271BCD96DC00FFE25D /* Build configuration list for PBXNativeTarget "HopeFMUITests" */;
+			buildPhases = (
+				B37C39141BCD96DC00FFE25D /* Sources */,
+				B37C39151BCD96DC00FFE25D /* Frameworks */,
+				B37C39161BCD96DC00FFE25D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B37C391A1BCD96DC00FFE25D /* PBXTargetDependency */,
+			);
+			name = HopeFMUITests;
+			productName = radioUITests;
+			productReference = A5A4A8EF1C1F169600E2E42F /* HopeFM.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B37C38F11BCD96DB00FFE25D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Oleg Alekseenko";
+				TargetAttributes = {
+					B37C38F81BCD96DB00FFE25D = {
+						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = 9P8MWM4C5E;
+						SystemCapabilities = {
+							com.apple.InterAppAudio = {
+								enabled = 0;
+							};
+						};
+					};
+					B37C390C1BCD96DC00FFE25D = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = B37C38F81BCD96DB00FFE25D;
+					};
+					B37C39171BCD96DC00FFE25D = {
+						CreatedOnToolsVersion = 7.0.1;
+						TestTargetID = B37C38F81BCD96DB00FFE25D;
+					};
+				};
+			};
+			buildConfigurationList = B37C38F41BCD96DB00FFE25D /* Build configuration list for PBXProject "HopeFM" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B37C38F01BCD96DB00FFE25D;
+			productRefGroup = B37C38F01BCD96DB00FFE25D;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B37C38F81BCD96DB00FFE25D /* HopeFM */,
+				B37C390C1BCD96DC00FFE25D /* HopeFMTests */,
+				B37C39171BCD96DC00FFE25D /* HopeFMUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B37C38F71BCD96DB00FFE25D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B37C39071BCD96DB00FFE25D /* LaunchScreen.storyboard in Resources */,
+				B38B33801BD96E2B00F9C8C8 /* Localizable.strings in Resources */,
+				B37C39041BCD96DB00FFE25D /* Assets.xcassets in Resources */,
+				B37C39021BCD96DB00FFE25D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B37C390B1BCD96DC00FFE25D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B37C39161BCD96DC00FFE25D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		01E0675282772DCF61621A35 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C71E85AA051FA03F38D6649C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFDA887A87AB46C9D572F258 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B37C38F51BCD96DB00FFE25D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5839A5D1C1ED66E00787FDD /* RadioPlayer.swift in Sources */,
+				B37C38FF1BCD96DB00FFE25D /* ViewController.swift in Sources */,
+				B353C7F01BFBB1D400DC3CDD /* VolumeSlider.swift in Sources */,
+				B37C392B1BCD9D2400FFE25D /* Color.swift in Sources */,
+				B37C38FD1BCD96DB00FFE25D /* AppDelegate.swift in Sources */,
+				B38B337E1BD95FAF00F9C8C8 /* Settings.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B37C39091BCD96DC00FFE25D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B37C392C1BCD9D2400FFE25D /* Color.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B37C39141BCD96DC00FFE25D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B37C392D1BCD9D2400FFE25D /* Color.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B37C390F1BCD96DC00FFE25D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B37C38F81BCD96DB00FFE25D /* HopeFM */;
+			targetProxy = B37C390E1BCD96DC00FFE25D /* PBXContainerItemProxy */;
+		};
+		B37C391A1BCD96DC00FFE25D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B37C38F81BCD96DB00FFE25D /* HopeFM */;
+			targetProxy = B37C39191BCD96DC00FFE25D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B37C39001BCD96DB00FFE25D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B37C39011BCD96DB00FFE25D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B37C39051BCD96DB00FFE25D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B37C39061BCD96DB00FFE25D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A5839A5E1C1ED73200787FDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Debug;
+		};
+		A5839A5F1C1ED73200787FDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DE8E1D205D4078E1CF2A1CC /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/App",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				INFOPLIST_FILE = App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ua.hope.radio.hopefm;
+				PRODUCT_NAME = HopeFM;
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		A5839A601C1ED73200787FDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = radioTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alekoleg.radioTests;
+				PRODUCT_NAME = HopeFM;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HopeFM.app/HopeFM";
+			};
+			name = Debug;
+		};
+		A5839A611C1ED73200787FDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = radioUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alekoleg.radioUITests;
+				PRODUCT_NAME = HopeFM;
+				TEST_TARGET_NAME = radio;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		B37C39201BCD96DC00FFE25D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B37C39231BCD96DC00FFE25D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B19E7C80A1C40FCBFDA41CB /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/App",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
+				INFOPLIST_FILE = App/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ua.hope.radio.hopefm;
+				PRODUCT_NAME = HopeFM;
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		B37C39261BCD96DC00FFE25D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = radioTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alekoleg.radioTests;
+				PRODUCT_NAME = HopeFM;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HopeFM.app/HopeFM";
+			};
+			name = Release;
+		};
+		B37C39291BCD96DC00FFE25D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = radioUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.alekoleg.radioUITests;
+				PRODUCT_NAME = HopeFM;
+				TEST_TARGET_NAME = radio;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B37C38F41BCD96DB00FFE25D /* Build configuration list for PBXProject "HopeFM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B37C39201BCD96DC00FFE25D /* Release */,
+				A5839A5E1C1ED73200787FDD /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B37C39211BCD96DC00FFE25D /* Build configuration list for PBXNativeTarget "HopeFM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B37C39231BCD96DC00FFE25D /* Release */,
+				A5839A5F1C1ED73200787FDD /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B37C39241BCD96DC00FFE25D /* Build configuration list for PBXNativeTarget "HopeFMTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B37C39261BCD96DC00FFE25D /* Release */,
+				A5839A601C1ED73200787FDD /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B37C39271BCD96DC00FFE25D /* Build configuration list for PBXNativeTarget "HopeFMUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B37C39291BCD96DC00FFE25D /* Release */,
+				A5839A611C1ED73200787FDD /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B37C38F11BCD96DB00FFE25D /* Project object */;
+}
