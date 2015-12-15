@@ -118,9 +118,9 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
             self.openTwitter()
         };
         
-        let pdAction = UIAlertAction(title: "Podster", style: .Default) { (action) -> Void in
-            self.openPodster()
-        };
+        // let pdAction = UIAlertAction(title: "Podster", style: .Default) { (action) -> Void in
+        //    self.openPodster()
+        // };
         
         let emAction = UIAlertAction(title: "Обратная связь", style: .Default) { (action) -> Void in
             self.sendMail()
@@ -133,7 +133,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         alertVC.addAction(fbAction)
         alertVC.addAction(vkAction)
         alertVC.addAction(twAction)
-        alertVC.addAction(pdAction)
+        // alertVC.addAction(pdAction)
         alertVC.addAction(emAction)
         alertVC.addAction(cancelAction)
         
