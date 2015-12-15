@@ -37,7 +37,13 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 
-		setupUI()
+        // TODO 
+        // Setup Volume Slider
+        volumeSlider?.setVolumeThumbImage(UIImage(named: "volumeThumb"), forState: .Normal);
+        volumeSlider?.setMinimumVolumeSliderImage(UIImage(named: "volumeMinimum")?.resizableImageWithCapInsets(UIEdgeInsetsMake(0, 3, 0, 0)), forState: .Normal)
+        volumeSlider?.setMaximumVolumeSliderImage(UIImage(named: "volumeMaximum")?.resizableImageWithCapInsets(UIEdgeInsetsMake(0, 0, 0, 3)), forState: .Normal)
+        volumeSlider?.showsRouteButton = false;
+
 		setupReachabilityObserving()
 
 		try! AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
@@ -70,15 +76,6 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 	}
 
 	// MARK: - Setup -
-
-
-	func setupUI()
-	{
-		volumeSlider?.setVolumeThumbImage(UIImage(named: "volumeThumb"), forState: .Normal);
-        volumeSlider?.setMinimumVolumeSliderImage(UIImage(named: "volumeMinimum")?.resizableImageWithCapInsets(UIEdgeInsetsMake(0, 3, 0, 0)), forState: .Normal)
-        volumeSlider?.setMaximumVolumeSliderImage(UIImage(named: "volumeMaximum")?.resizableImageWithCapInsets(UIEdgeInsetsMake(0, 0, 0, 3)), forState: .Normal)
-		volumeSlider?.showsRouteButton = false;
-	}
 
 	func setupReachabilityObserving()
 	{

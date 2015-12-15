@@ -4,3 +4,9 @@ disabled_rules:
     - type_name
     - nesting
     - type_body_length
+    - force_cast
+    - force_try
+    - todo
+
+
+
