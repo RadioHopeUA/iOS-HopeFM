@@ -12,6 +12,7 @@ import SafariServices
 import MessageUI
 import AFNetworking
 import MediaPlayer
+import Foundation
 
 class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
@@ -104,17 +105,17 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 	// MARK: - Actions -
 
     @IBAction func showShare(sender: UIButton) {
-        let alertVC = UIAlertController(title: "Мы в соц. сетях", message: nil, preferredStyle: .ActionSheet);
+        let alertVC = UIAlertController(title: "Social.Title".localized, message: nil, preferredStyle: .ActionSheet);
         
-        let fbAction = UIAlertAction(title: "Facebook", style: .Default) { (action) -> Void in
+        let fbAction = UIAlertAction(title: "Social.Facebook".localized, style: .Default) { (action) -> Void in
             self.openFacebook()
         };
         
-        let vkAction = UIAlertAction(title: "Вконтакте", style: .Default) { (action) -> Void in
+        let vkAction = UIAlertAction(title: "Social.Vk".localized, style: .Default) { (action) -> Void in
             self.openVK()
         };
         
-        let twAction = UIAlertAction(title: "Twitter", style: .Default) { (action) -> Void in
+        let twAction = UIAlertAction(title: "Social.Twitter".localized, style: .Default) { (action) -> Void in
             self.openTwitter()
         };
         
@@ -122,11 +123,11 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         //    self.openPodster()
         // };
         
-        let emAction = UIAlertAction(title: "Обратная связь", style: .Default) { (action) -> Void in
+        let emAction = UIAlertAction(title: "Social.Feedback".localized, style: .Default) { (action) -> Void in
             self.sendMail()
         };
         
-        let cancelAction = UIAlertAction(title: "Отмена", style: .Cancel) { (action) -> Void in
+        let cancelAction = UIAlertAction(title: "Social.Cancel".localized, style: .Cancel) { (action) -> Void in
             
         };
         
@@ -218,7 +219,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 	func playerDidFailed(not:NSNotification)
 	{
 		stopPlaying()
-		showError("Ошибка инициализации плеера");
+		showError("Error.Player".localized);
 	}
 
 	func startPlaying()
@@ -239,7 +240,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 		}
 		else
 		{
-			showError("Нет доступа к сети. Проверьте подключение!")
+			showError("Error.Network".localized)
 		}
 	}
 

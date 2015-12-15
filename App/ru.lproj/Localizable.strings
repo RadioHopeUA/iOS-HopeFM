@@ -1,0 +1,17 @@
+//
+//  Localizable.strings
+//  HopeFM
+//
+//  Created by Sergey Sadovoi on 15.12.15.
+//  Copyright © 2016 Hope Media Group Ukraine. All rights reserved.
+//
+
+"Social.Title"    = "Мы в соц. сетях";
+"Social.Facebook" = "Facebook";
+"Social.Vk"       = "ВКонтакте";
+"Social.Twitter"  = "Твиттер";
+"Social.Feedback" = "Обратная связь";
+"Social.Cancel"   = "Отмена";
+
+"Error.Player"  = "Ошибка плеера";
+"Error.Network" = "Проверьте подключение к сети";
