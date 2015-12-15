@@ -18,16 +18,16 @@ import Foundation
 class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
 	// MARK: - Properties -
+    
 	@IBOutlet var playButton: UIButton?
 	@IBOutlet var playTextLabel: UILabel?
 	@IBOutlet var volumeSlider: MPVolumeView?
 
 	var player: AVPlayer?
 
-	var playing:Bool = false
-	{
+	var playing: Bool = false {
 		didSet {
-			playButton?.selected = playing;
+			playButton?.selected = playing
 		}
 	}
 
@@ -39,10 +39,10 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
         // TODO 
         // Setup Volume Slider
-        volumeSlider?.setVolumeThumbImage(UIImage(named: "volumeThumb"), forState: .Normal);
+        volumeSlider?.setVolumeThumbImage(UIImage(named: "volumeThumb"), forState: .Normal)
         volumeSlider?.setMinimumVolumeSliderImage(UIImage(named: "volumeMinimum")?.resizableImageWithCapInsets(UIEdgeInsetsMake(0, 3, 0, 0)), forState: .Normal)
         volumeSlider?.setMaximumVolumeSliderImage(UIImage(named: "volumeMaximum")?.resizableImageWithCapInsets(UIEdgeInsetsMake(0, 0, 0, 3)), forState: .Normal)
-        volumeSlider?.showsRouteButton = false;
+        volumeSlider?.showsRouteButton = false
 
 		setupReachabilityObserving()
 
@@ -57,7 +57,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
 
-		self.volumeSlider?.layer.removeAllAnimations();
+		self.volumeSlider?.layer.removeAllAnimations()
 	}
 
 	override func viewWillAppear(animated: Bool) {
@@ -77,13 +77,12 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
 	// MARK: - Setup -
 
-	func setupReachabilityObserving()
-	{
+	func setupReachabilityObserving() {
 		AFNetworkReachabilityManager.sharedManager().startMonitoring()
-		AFNetworkReachabilityManager.sharedManager().setReachabilityStatusChangeBlock { (status:AFNetworkReachabilityStatus) -> Void in
+		AFNetworkReachabilityManager.sharedManager().setReachabilityStatusChangeBlock { (status: AFNetworkReachabilityStatus) -> Void in
 			switch status {
 			case .NotReachable:
-                if (self.playing) {
+                if self.playing {
                     self.startPlaying()
                 }
 					// self.stopPlaying()
@@ -101,19 +100,19 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 	// MARK: - Actions -
 
     @IBAction func showShare(sender: UIButton) {
-        let alertVC = UIAlertController(title: "Social.Title".localized, message: nil, preferredStyle: .ActionSheet);
+        let alertVC = UIAlertController(title: "Social.Title".localized, message: nil, preferredStyle: .ActionSheet)
         
         let fbAction = UIAlertAction(title: "Social.Facebook".localized, style: .Default) { (action) -> Void in
             self.openFacebook()
-        };
+        }
         
         let vkAction = UIAlertAction(title: "Social.Vk".localized, style: .Default) { (action) -> Void in
             self.openVK()
-        };
+        }
         
         let twAction = UIAlertAction(title: "Social.Twitter".localized, style: .Default) { (action) -> Void in
             self.openTwitter()
-        };
+        }
         
         // let pdAction = UIAlertAction(title: "Podster", style: .Default) { (action) -> Void in
         //    self.openPodster()
@@ -121,11 +120,11 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         
         let emAction = UIAlertAction(title: "Social.Feedback".localized, style: .Default) { (action) -> Void in
             self.sendMail()
-        };
+        }
         
         let cancelAction = UIAlertAction(title: "Social.Cancel".localized, style: .Cancel) { (action) -> Void in
             
-        };
+        }
         
         alertVC.addAction(fbAction)
         alertVC.addAction(vkAction)
@@ -141,22 +140,19 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         openURL(Config.Urls.Website)
     }
 
-	@IBAction func openFacebook()
-	{
+	@IBAction func openFacebook() {
 		openURL(Config.Urls.Facebook)
 	}
 
-	@IBAction func openPodster()
-	{
+	@IBAction func openPodster() {
 		openURL(Config.Urls.Podster)
 	}
 
-	@IBAction func openTwitter()
-	{
+	@IBAction func openTwitter() {
 		openURL(Config.Urls.Twitter)
 	}
 
-	@IBAction func openVK()	{
+    @IBAction func openVK() {
         let appURL     = Config.Urls.Vk.App!
         let browserURL = Config.Urls.Vk.Browser!
 
@@ -169,109 +165,88 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
 
 	@IBAction func sendMail() {
-		if MFMailComposeViewController.canSendMail()
-		{
+		if MFMailComposeViewController.canSendMail() {
 			let mailVC = MFMailComposeViewController()
 			mailVC.setSubject("Hope.FM Radio App")
 			mailVC.setToRecipients(["support@hope.ua"])
 			mailVC.mailComposeDelegate = self
-			self.presentViewController(mailVC, animated: true, completion: nil);
+			self.presentViewController(mailVC, animated: true, completion: nil)
 		}
 	}
 
-	func openURL(url: NSURL?) -> ()
-	{
-		if(url != nil) {
-			if UIApplication.sharedApplication().canOpenURL(url!)
-			{
+	func openURL(url: NSURL?) -> () {
+		if url != nil {
+			if UIApplication.sharedApplication().canOpenURL(url!) {
 				UIApplication.sharedApplication().openURL(url!)
 			}
 		}
 	}
 
-	@IBAction func playOrPause(sender:UIButton) -> ()
-	{
-		if(playing)
-		{
+	@IBAction func playOrPause(sender: UIButton) -> () {
+		if playing {
 			stopPlaying()
-		}
-		else
-		{
+        } else {
 			startPlaying()
 		}
 	}
 
-	@IBAction func updateVolume(sender:UISlider)
-	{
-		player?.volume = sender.value;
+	@IBAction func updateVolume(sender: UISlider) {
+		player?.volume = sender.value
 	}
 
-	func playerDidEnded(not:NSNotification)
-	{
+	func playerDidEnded(not: NSNotification) {
 		stopPlaying()
 	}
 
-	func playerDidFailed(not:NSNotification)
-	{
+	func playerDidFailed(not: NSNotification) {
 		stopPlaying()
-		showError("Error.Player".localized);
+		showError("Error.Player".localized)
 	}
 
-	func startPlaying()
-	{
-		if (player != nil)
-		{
-			player?.pause();
-			player = nil;
+	func startPlaying() {
+		if player != nil {
+			player?.pause()
+			player = nil
 		}
 
-		if(AFNetworkReachabilityManager.sharedManager().reachable)
-		{
+		if AFNetworkReachabilityManager.sharedManager().reachable {
 			player = AVPlayer(URL: Config.Stream.Url!)
 			player?.play()
 			playing = true
 			beginRecurciveUpdateTitleUpdate()
-		}
-		else
-		{
+		} else {
 			showError("Error.Network".localized)
 		}
 	}
 
-	func stopPlaying()
-	{
-		if (player != nil)
-		{
-			player?.pause();
-			player = nil;
+	func stopPlaying() {
+		if player != nil {
+			player?.pause()
+			player = nil
 		}
-		playing = false;
+		playing = false
 	}
 
-	func beginRecurciveUpdateTitleUpdate()
-	{
-		let manager = AFURLSessionManager();
+	func beginRecurciveUpdateTitleUpdate() {
+		let manager = AFURLSessionManager()
 		let responseSerializer = AFHTTPResponseSerializer()
 		var types = responseSerializer.acceptableContentTypes
 		types?.insert("text/plain")
 		responseSerializer.acceptableContentTypes = types
 		manager.responseSerializer = responseSerializer
-		let request = NSURLRequest(URL: Config.Stream.Info!);
+		let request = NSURLRequest(URL: Config.Stream.Info!)
 		let task = manager.dataTaskWithRequest(request) { (response, data, error) -> Void in
-			if ((data as? NSData) != nil)
-			{
+			if (data as? NSData) != nil {
 				let text = NSString(data: data as! NSData, encoding: NSUTF8StringEncoding)!
 				let components = text.componentsSeparatedByString("-")
-				if (components.count > 1)
-				{
-					self.updateTextLabel(components[0], detail: components[1]);
+				if components.count > 1 {
+					self.updateTextLabel(components[0], detail: components[1])
 				}
 			}
 
 			let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(3 * Double(NSEC_PER_SEC)))
 			dispatch_after(delayTime, dispatch_get_main_queue()) {
-				if self.playing
-				{
+				if self.playing {
 					self.beginRecurciveUpdateTitleUpdate()
 				}
 			}
@@ -279,23 +254,19 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 		task.resume()
 	}
 
-	func updateTextLabel(title:String?, var detail:String?)
-	{
-		let string = NSMutableAttributedString();
-		if (title != nil)
-		{
+	func updateTextLabel(title: String?, var detail: String?) {
+		let string = NSMutableAttributedString()
+		if title != nil {
 			let atributes = [
 				NSFontAttributeName : UIFont.systemFontOfSize(20.0, weight: UIFontWeightSemibold)
 			]
 
-			let titleString = NSAttributedString(string: title!, attributes: atributes );
+			let titleString = NSAttributedString(string: title!, attributes: atributes )
 			string.appendAttributedString(titleString)
 		}
 
-		if (detail != nil)
-		{
-			if (title != nil)
-			{
+		if detail != nil {
+			if title != nil {
 				detail = "\n\(detail!)"
 			}
 			let atributes = [
@@ -309,8 +280,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 		self.playTextLabel?.attributedText = string
 	}
 
-    func showError(msg:String?)
-	{
+    func showError(msg: String?) {
         let attributes = [
             NSFontAttributeName : UIFont.systemFontOfSize(20.0, weight: UIFontWeightSemibold),
             NSForegroundColorAttributeName: UIColor(red: 255.0 / 255.0, green: 0, blue: 0, alpha: 0.7)
@@ -321,8 +291,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
     }
 
 	override func remoteControlReceivedWithEvent(event: UIEvent?) {
-		if (event!.type == UIEventType.RemoteControl)
-		{
+		if event!.type == UIEventType.RemoteControl {
 			switch event!.subtype {
 			case UIEventSubtype.RemoteControlPlay:
 				startPlaying()
@@ -337,7 +306,6 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 	// MARK: - MFMailComposeDelegate -
 
 	func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-		controller.dismissViewControllerAnimated(true, completion: nil);
+		controller.dismissViewControllerAnimated(true, completion: nil)
 	}
 }
-
