@@ -1,9 +1,9 @@
 //
 //  VolumeSlider.swift
-//  radio
+//  HopeFM
 //
-//  Created by Oleg Alekseenko on 17/11/15.
-//  Copyright © 2015 Oleg Alekseenko. All rights reserved.
+//  Created by Oleg Alekseenko on 17.11.15.
+//  Copyright © 2016 Hope Media Group Ukraine. All rights reserved.
 //
 
 import Foundation
@@ -15,10 +15,9 @@ class VolumeSlider: MPVolumeView {
 		recursiveRemoveAnimation(self)
 	}
 
-	func recursiveRemoveAnimation(view:UIView?){
+	func recursiveRemoveAnimation(view: UIView?) {
 		view?.layer.removeAllAnimations()
-		for subview in view!.subviews
-		{
+		for subview in view!.subviews {
 			recursiveRemoveAnimation(subview)
 		}
 	}

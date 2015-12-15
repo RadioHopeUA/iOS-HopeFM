@@ -268,7 +268,7 @@
         <image name="logo" width="253" height="55"/>
         <image name="pause" width="128" height="128"/>
         <image name="play" width="128" height="128"/>
-        <image name="social" width="26" height="23"/>
+        <image name="social" width="19" height="24"/>
         <image name="volumeDown" width="12" height="17"/>
         <image name="volumeUp" width="24" height="19"/>
         <image name="website" width="26" height="23"/>

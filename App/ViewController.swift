@@ -1,9 +1,10 @@
 //
 //  ViewController.swift
-//  radio
+//  HopeFM
 //
-//  Created by Oleg Alekseenko on 13/10/15.
-//  Copyright © 2015 Oleg Alekseenko. All rights reserved.
+//  Created by Oleg Alekseenko on 13.10.15.
+//  Modified by Sergey Sadovoi
+//  Copyright © 2015 Hope Media Group Ukraine. All rights reserved.
 //
 
 import UIKit
@@ -73,7 +74,6 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
 	func setupUI()
 	{
-		volumeSlider?.tintColor = UIColor.r_lightColor();
 		volumeSlider?.setVolumeThumbImage(UIImage(named: "volumeThumb"), forState: .Normal);
         volumeSlider?.setMinimumVolumeSliderImage(UIImage(named: "volumeMinimum")?.resizableImageWithCapInsets(UIEdgeInsetsMake(0, 3, 0, 0)), forState: .Normal)
         volumeSlider?.setMaximumVolumeSliderImage(UIImage(named: "volumeMaximum")?.resizableImageWithCapInsets(UIEdgeInsetsMake(0, 0, 0, 3)), forState: .Normal)
@@ -141,34 +141,29 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
     }
     
     @IBAction func openWebsite(sender: UIButton) {
-        let url = NSURL(string: Config.Urls.Website)
-        openURL(url)
+        openURL(Config.Urls.Website)
     }
 
 	@IBAction func openFacebook()
 	{
-		let url = NSURL(string: Config.Urls.Facebook)
-		openURL(url)
+		openURL(Config.Urls.Facebook)
 	}
 
 	@IBAction func openPodster()
 	{
-		let url = NSURL(string: Config.Urls.Podster)
-		openURL(url)
+		openURL(Config.Urls.Podster)
 	}
 
 	@IBAction func openTwitter()
 	{
-		let url = NSURL(string: Config.Urls.Twitter)
-		openURL(url)
+		openURL(Config.Urls.Twitter)
 	}
 
-	@IBAction func openVK()
-	{
-        let appURL     = NSURL(string: Config.Urls.Vk.App)!
-        let browserURL = NSURL(string: Config.Urls.Vk.Browser)!
+	@IBAction func openVK()	{
+        let appURL     = Config.Urls.Vk.App!
+        let browserURL = Config.Urls.Vk.Browser!
 
-        if UIApplication.sharedApplication().canOpenURL(appURL){
+        if UIApplication.sharedApplication().canOpenURL(appURL) {
             UIApplication.sharedApplication().openURL(appURL)
         } else {
             UIApplication.sharedApplication().openURL(browserURL)
@@ -176,8 +171,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 	}
 
 
-	@IBAction func sendMail()
-	{
+	@IBAction func sendMail() {
 		if MFMailComposeViewController.canSendMail()
 		{
 			let mailVC = MFMailComposeViewController()
@@ -190,11 +184,10 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
 	func openURL(url: NSURL?) -> ()
 	{
-		if(url != nil)
-		{
+		if(url != nil) {
 			if UIApplication.sharedApplication().canOpenURL(url!)
 			{
-				UIApplication.sharedApplication().openURL(url!);
+				UIApplication.sharedApplication().openURL(url!)
 			}
 		}
 	}
@@ -237,8 +230,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
 		if(AFNetworkReachabilityManager.sharedManager().reachable)
 		{
-			let url = NSURL(string: Config.Stream.Url)
-			player = AVPlayer(URL: url!)
+			player = AVPlayer(URL: Config.Stream.Url!)
 			player?.play()
 			playing = true
 			beginRecurciveUpdateTitleUpdate()
@@ -267,8 +259,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 		types?.insert("text/plain")
 		responseSerializer.acceptableContentTypes = types
 		manager.responseSerializer = responseSerializer
-		let url = NSURL(string: Config.Stream.Info)
-		let request = NSURLRequest(URL: url!);
+		let request = NSURLRequest(URL: Config.Stream.Info!);
 		let task = manager.dataTaskWithRequest(request) { (response, data, error) -> Void in
 			if ((data as? NSData) != nil)
 			{

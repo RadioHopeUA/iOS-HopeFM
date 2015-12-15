@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		A5212D311C2018D1003F5AFD /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5212D301C2018D1003F5AFD /* StringExtensions.swift */; };
 		A5212D321C201A86003F5AFD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A5212D341C201A86003F5AFD /* Localizable.strings */; };
+		A5212D381C20222E003F5AFD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5212D371C20222E003F5AFD /* AVFoundation.framework */; };
+		A5212D3B1C202850003F5AFD /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = A5212D3A1C202850003F5AFD /* .swiftlint.yml */; };
+		A5212D3F1C203849003F5AFD /* RadioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5212D3E1C203849003F5AFD /* RadioPlayer.swift */; };
 		A5839A641C1ED7D700787FDD /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5839A631C1ED7D700787FDD /* AFNetworking.framework */; };
 		B353C7F01BFBB1D400DC3CDD /* VolumeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B353C7EF1BFBB1D400DC3CDD /* VolumeSlider.swift */; };
 		B37C38FD1BCD96DB00FFE25D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37C38FC1BCD96DB00FFE25D /* AppDelegate.swift */; };
@@ -16,9 +19,6 @@
 		B37C39021BCD96DB00FFE25D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B37C39001BCD96DB00FFE25D /* Main.storyboard */; };
 		B37C39041BCD96DB00FFE25D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B37C39031BCD96DB00FFE25D /* Assets.xcassets */; };
 		B37C39071BCD96DB00FFE25D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B37C39051BCD96DB00FFE25D /* LaunchScreen.storyboard */; };
-		B37C392B1BCD9D2400FFE25D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37C392A1BCD9D2400FFE25D /* Color.swift */; };
-		B37C392C1BCD9D2400FFE25D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37C392A1BCD9D2400FFE25D /* Color.swift */; };
-		B37C392D1BCD9D2400FFE25D /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37C392A1BCD9D2400FFE25D /* Color.swift */; };
 		B38B337E1BD95FAF00F9C8C8 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38B337D1BD95FAF00F9C8C8 /* Settings.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +50,9 @@
 		A5212D331C201A86003F5AFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A5212D351C201A8D003F5AFD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A5212D361C201A8F003F5AFD /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A5212D371C20222E003F5AFD /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A5212D3A1C202850003F5AFD /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		A5212D3E1C203849003F5AFD /* RadioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioPlayer.swift; sourceTree = "<group>"; };
 		A5839A621C1ED74100787FDD /* HopeFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HopeFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5839A631C1ED7D700787FDD /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "Pods/../build/Debug-iphoneos/AFNetworking.framework"; sourceTree = "<group>"; };
 		A5A4A8EE1C1F169600E2E42F /* HopeFM.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HopeFM.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,9 +64,7 @@
 		B37C39031BCD96DB00FFE25D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B37C39061BCD96DB00FFE25D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B37C39081BCD96DB00FFE25D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B37C392A1BCD9D2400FFE25D /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		B38B337D1BD95FAF00F9C8C8 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		B38B33831BD9787D00F9C8C8 /* App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = App.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5212D381C20222E003F5AFD /* AVFoundation.framework in Frameworks */,
 				A5839A641C1ED7D700787FDD /* AFNetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,6 +106,8 @@
 		B37C38F01BCD96DB00FFE25D = {
 			isa = PBXGroup;
 			children = (
+				A5212D3A1C202850003F5AFD /* .swiftlint.yml */,
+				A5212D371C20222E003F5AFD /* AVFoundation.framework */,
 				A5839A631C1ED7D700787FDD /* AFNetworking.framework */,
 				B37C38FB1BCD96DB00FFE25D /* HopeFM */,
 				A12C6D7D952023AA2BD0C27D /* Pods */,
@@ -116,18 +120,17 @@
 		B37C38FB1BCD96DB00FFE25D /* HopeFM */ = {
 			isa = PBXGroup;
 			children = (
-				B38B33831BD9787D00F9C8C8 /* App.entitlements */,
 				B37C38FC1BCD96DB00FFE25D /* AppDelegate.swift */,
 				B37C38FE1BCD96DB00FFE25D /* ViewController.swift */,
 				B38B337D1BD95FAF00F9C8C8 /* Settings.swift */,
 				B353C7EF1BFBB1D400DC3CDD /* VolumeSlider.swift */,
-				B37C392A1BCD9D2400FFE25D /* Color.swift */,
 				B37C39001BCD96DB00FFE25D /* Main.storyboard */,
 				B37C39031BCD96DB00FFE25D /* Assets.xcassets */,
 				B37C39051BCD96DB00FFE25D /* LaunchScreen.storyboard */,
 				B37C39081BCD96DB00FFE25D /* Info.plist */,
 				A5212D341C201A86003F5AFD /* Localizable.strings */,
 				A5212D301C2018D1003F5AFD /* StringExtensions.swift */,
+				A5212D3E1C203849003F5AFD /* RadioPlayer.swift */,
 			);
 			name = HopeFM;
 			path = App;
@@ -141,6 +144,7 @@
 			buildConfigurationList = B37C39211BCD96DC00FFE25D /* Build configuration list for PBXNativeTarget "HopeFM" */;
 			buildPhases = (
 				01E0675282772DCF61621A35 /* Check Pods Manifest.lock */,
+				A5212D391C2027D4003F5AFD /* ShellScript */,
 				B37C38F51BCD96DB00FFE25D /* Sources */,
 				B37C38F61BCD96DB00FFE25D /* Frameworks */,
 				B37C38F71BCD96DB00FFE25D /* Resources */,
@@ -247,6 +251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5212D3B1C202850003F5AFD /* .swiftlint.yml in Resources */,
 				B37C39071BCD96DB00FFE25D /* LaunchScreen.storyboard in Resources */,
 				A5212D321C201A86003F5AFD /* Localizable.strings in Resources */,
 				B37C39041BCD96DB00FFE25D /* Assets.xcassets in Resources */,
@@ -286,6 +291,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		A5212D391C2027D4003F5AFD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
 		C71E85AA051FA03F38D6649C /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -323,10 +341,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5212D3F1C203849003F5AFD /* RadioPlayer.swift in Sources */,
 				A5212D311C2018D1003F5AFD /* StringExtensions.swift in Sources */,
 				B37C38FF1BCD96DB00FFE25D /* ViewController.swift in Sources */,
 				B353C7F01BFBB1D400DC3CDD /* VolumeSlider.swift in Sources */,
-				B37C392B1BCD9D2400FFE25D /* Color.swift in Sources */,
 				B37C38FD1BCD96DB00FFE25D /* AppDelegate.swift in Sources */,
 				B38B337E1BD95FAF00F9C8C8 /* Settings.swift in Sources */,
 			);
@@ -336,7 +354,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B37C392C1BCD9D2400FFE25D /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,7 +361,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B37C392D1BCD9D2400FFE25D /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
