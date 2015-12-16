@@ -46,9 +46,7 @@
 		2DE8E1D205D4078E1CF2A1CC /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6B19E7C80A1C40FCBFDA41CB /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A5212D2C1C2012C4003F5AFD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
-		A5212D2D1C2012C4003F5AFD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		A5212D2E1C20134F003F5AFD /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Main.strings; sourceTree = "<group>"; };
-		A5212D2F1C20134F003F5AFD /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		A5212D301C2018D1003F5AFD /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		A5212D331C201A86003F5AFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A5212D351C201A8D003F5AFD /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -143,8 +141,8 @@
 				B38B337D1BD95FAF00F9C8C8 /* Settings.swift */,
 				B353C7EF1BFBB1D400DC3CDD /* VolumeSlider.swift */,
 				B37C39001BCD96DB00FFE25D /* Main.storyboard */,
-				B37C39031BCD96DB00FFE25D /* Assets.xcassets */,
 				B37C39051BCD96DB00FFE25D /* LaunchScreen.storyboard */,
+				B37C39031BCD96DB00FFE25D /* Assets.xcassets */,
 				B37C39081BCD96DB00FFE25D /* Info.plist */,
 				A5212D341C201A86003F5AFD /* Localizable.strings */,
 				A5212D301C2018D1003F5AFD /* StringExtensions.swift */,
@@ -424,8 +422,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				B37C39061BCD96DB00FFE25D /* Base */,
-				A5212D2D1C2012C4003F5AFD /* ru */,
-				A5212D2F1C20134F003F5AFD /* uk */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

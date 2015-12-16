@@ -8,7 +8,6 @@ disabled_rules:
     - force_try
     - todo
     - function_body_length
-    - 
 
 included:
     - App

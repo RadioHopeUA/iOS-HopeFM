@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -15,30 +16,44 @@
                         <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                    <view key="view" contentMode="scaleAspectFit" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="Ir8-Ss-avM">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Ifx-43-6gV">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="gkd-Nn-5ee" userLabel="Logo">
-                                <rect key="frame" x="180" y="273.5" width="240" height="53"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoLaunch" translatesAutoresizingMaskIntoConstraints="NO" id="gkd-Nn-5ee" userLabel="Logo">
+                                <rect key="frame" x="180" y="239" width="240" height="122"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="gkd-Nn-5ee" secondAttribute="height" multiplier="253:56" id="VZ7-DW-bzc"/>
+                                    <constraint firstAttribute="width" secondItem="gkd-Nn-5ee" secondAttribute="height" multiplier="378:192" id="VZ7-DW-bzc"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.070588235294117646" green="0.082352941176470587" blue="0.078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="gkd-Nn-5ee" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="5FW-QP-jTT"/>
-                            <constraint firstItem="Ir8-Ss-avM" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="HDr-oO-W27"/>
-                            <constraint firstItem="Ir8-Ss-avM" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="UII-Tg-m10"/>
+                            <constraint firstItem="gkd-Nn-5ee" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="7LE-Z8-nIQ"/>
+                            <constraint firstItem="Ifx-43-6gV" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="7LZ-fO-xre"/>
+                            <constraint firstItem="gkd-Nn-5ee" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="GXs-r7-14U"/>
+                            <constraint firstItem="Ifx-43-6gV" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="Rzs-bZ-Lj1"/>
+                            <constraint firstItem="gkd-Nn-5ee" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ZOa-fq-OTM"/>
+                            <constraint firstItem="gkd-Nn-5ee" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="a3i-Bj-WeJ"/>
                             <constraint firstItem="gkd-Nn-5ee" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="c4l-zC-XUY"/>
-                            <constraint firstItem="Ir8-Ss-avM" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="lLL-wO-IVI"/>
-                            <constraint firstItem="Ir8-Ss-avM" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="szd-Nu-Ned"/>
+                            <constraint firstItem="gkd-Nn-5ee" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="c8o-sd-3Os"/>
+                            <constraint firstItem="Ifx-43-6gV" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="jZn-oO-sl8"/>
+                            <constraint firstItem="Ifx-43-6gV" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ohO-JT-Ukq"/>
                             <constraint firstItem="gkd-Nn-5ee" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.4" id="wVA-69-hsK"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="5FW-QP-jTT"/>
+                                <exclude reference="7LE-Z8-nIQ"/>
+                                <exclude reference="GXs-r7-14U"/>
+                                <exclude reference="a3i-Bj-WeJ"/>
+                                <exclude reference="c4l-zC-XUY"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -47,7 +62,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Background" width="375" height="667"/>
-        <image name="logo" width="253" height="55"/>
+        <image name="launchBackground" width="375" height="667"/>
+        <image name="logoLaunch" width="189" height="96"/>
     </resources>
 </document>

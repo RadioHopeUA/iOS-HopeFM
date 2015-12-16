@@ -4,7 +4,7 @@
 //
 //  Created by Oleg Alekseenko on 13.10.15.
 //  Modified by Sergey Sadovoi
-//  Copyright © 2015 Hope Media Group Ukraine. All rights reserved.
+//  Copyright © 2016 Hope Media Group Ukraine. All rights reserved.
 //
 
 import UIKit
@@ -98,11 +98,6 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         }
     }
     
-//	deinit {
-//		player?.currentItem?.removeObserver(self, forKeyPath: "status")
-//		NSNotificationCenter.defaultCenter().removeObserver(self)
-//	}
-
 	// MARK: - Actions -
 
     @IBAction func showShare(sender: UIButton) {
@@ -200,7 +195,6 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 	}
 
     func startPlaying(reset: Bool = false) {
-        print("Play start")
 		if AFNetworkReachabilityManager.sharedManager().reachable {
             if reset {
                 RadioPlayer.sharedInstance.reset()
@@ -214,7 +208,6 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 	}
 
 	func stopPlaying() {
-        print("Play stop")
         RadioPlayer.sharedInstance.pause()
         playButton?.selected = false
     }
@@ -287,15 +280,11 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 			switch event!.subtype {
 			case UIEventSubtype.RemoteControlPlay:
 				startPlaying(true)
-                print("Remote Play")
             case UIEventSubtype.RemoteControlPause:
                 stopPlaying()
-                print("Remote Pause")
             case UIEventSubtype.RemoteControlStop:
 				stopPlaying()
-                print("Remote Stop")
             case UIEventSubtype.RemoteControlTogglePlayPause:
-                print("Remote toggle")
                 if RadioPlayer.sharedInstance.currentlyPlaying() {
                     stopPlaying()
                 } else {

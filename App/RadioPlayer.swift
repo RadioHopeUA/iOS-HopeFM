@@ -15,7 +15,6 @@ class RadioPlayer {
     private var isPlaying = false
     
     func reset() {
-        print("Inner Play reset")
         player.replaceCurrentItemWithPlayerItem(AVPlayerItem(URL: Config.Stream.Url!))
     }
     
@@ -25,7 +24,6 @@ class RadioPlayer {
     }
     
     func pause() {
-        print("Inner Play pause")
         player.pause()
         isPlaying = false
     }

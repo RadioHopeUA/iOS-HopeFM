@@ -1,9 +1,9 @@
 //
-//  File.swift
+//  ColorExtensions.swift
 //  HopeFM
 //
-//  Created by Sergey on 15.12.15.
-//  Copyright © 2015 Oleg Alekseenko. All rights reserved.
+//  Created by Sergey Sadovoi on 15.12.15.
+//  Copyright © 2016 Hope Media Group Ukraine. All rights reserved.
 //
 
 import UIKit
