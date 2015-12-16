@@ -7,6 +7,8 @@ disabled_rules:
     - force_cast
     - force_try
     - todo
+    - function_body_length
+    - 
 
-
-
+included:
+    - App

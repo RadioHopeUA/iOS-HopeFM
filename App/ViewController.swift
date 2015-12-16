@@ -9,7 +9,6 @@
 
 import UIKit
 import AVFoundation
-import SafariServices
 import MessageUI
 import AFNetworking
 import MediaPlayer
@@ -41,7 +40,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
                 MPMediaItemPropertyTitle: "Remote.Title".localized,
                 MPMediaItemPropertyArtist: "Remote.Subtitle".localized
             ]
-            MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = songInfo as! [String : AnyObject]
+            MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = songInfo as? [String : AnyObject]
         }
         
         // Setup background playing
@@ -61,6 +60,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
                 if RadioPlayer.sharedInstance.currentlyPlaying() {
                     self.stopPlaying()
                 }
+                self.showError("Error.Network".localized)
             case .ReachableViaWiFi, .ReachableViaWWAN:
                 print("Network is ok")
                 if RadioPlayer.sharedInstance.currentlyPlaying() {
@@ -70,6 +70,12 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
                 break
             }
         }
+        
+        // Handle App state
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "applicationBecameActive:", name: UIApplicationDidBecomeActiveNotification, object: nil)
+        
+        // Update title
+        self.beginRecurciveUpdateTitleUpdate()
 
         self.view.layoutIfNeeded()
 	}
@@ -84,7 +90,14 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 		super.viewWillAppear(animated)
 		self.becomeFirstResponder()
 	}
-
+    
+    func applicationBecameActive(notification: NSNotification) {
+        if RadioPlayer.sharedInstance.currentlyPlaying() {
+            RadioPlayer.sharedInstance.reset()
+            RadioPlayer.sharedInstance.play()
+        }
+    }
+    
 //	deinit {
 //		player?.currentItem?.removeObserver(self, forKeyPath: "status")
 //		NSNotificationCenter.defaultCenter().removeObserver(self)
@@ -186,17 +199,6 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 		RadioPlayer.sharedInstance.setVolume(sender.value)
 	}
 
-//	func playerDidEnded(not: NSNotification) {
-//		stopPlaying()
-//        print("Player ended")
-//	}
-
-//	func playerDidFailed(not: NSNotification) {
-//		stopPlaying()
-//        print("Player failed")
-//		showError("Error.Player".localized)
-//	}
-
     func startPlaying(reset: Bool = false) {
         print("Play start")
 		if AFNetworkReachabilityManager.sharedManager().reachable {
@@ -273,7 +275,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
     func showError(msg: String?) {
         let attributes = [
             NSFontAttributeName : UIFont.systemFontOfSize(20.0, weight: UIFontWeightSemibold),
-            NSForegroundColorAttributeName: UIColor(red: 255.0 / 255.0, green: 0, blue: 0, alpha: 0.7)
+            NSForegroundColorAttributeName: UIColor(hex: 0xff0000)
         ]
         let message = NSAttributedString(string: msg!, attributes: attributes)
         
@@ -284,11 +286,21 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 		if event!.type == UIEventType.RemoteControl {
 			switch event!.subtype {
 			case UIEventSubtype.RemoteControlPlay:
-				startPlaying()
+				startPlaying(true)
                 print("Remote Play")
-			case UIEventSubtype.RemoteControlPause:
-				stopPlaying()
+            case UIEventSubtype.RemoteControlPause:
+                stopPlaying()
                 print("Remote Pause")
+            case UIEventSubtype.RemoteControlStop:
+				stopPlaying()
+                print("Remote Stop")
+            case UIEventSubtype.RemoteControlTogglePlayPause:
+                print("Remote toggle")
+                if RadioPlayer.sharedInstance.currentlyPlaying() {
+                    stopPlaying()
+                } else {
+                    startPlaying(true)
+                }
 			default: break
 			}
 		}

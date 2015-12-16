@@ -20,7 +20,6 @@ class RadioPlayer {
     }
     
     func play() {
-        print("Inner Play start")
         player.play()
         isPlaying = true
     }

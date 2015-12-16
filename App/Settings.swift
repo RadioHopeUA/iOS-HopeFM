@@ -10,7 +10,7 @@ import Foundation
 
 struct Config {
     struct Stream {
-        static let Url  = NSURL(string: "http://stream.hope.ua:7777/hope.fm/128")
+        static let Url  = NSURL(string: "http://stream.hope.ua:1935/hopefm/ngrp:live/playlist.m3u8")
         static let Info = NSURL(string: "http://stream.hope.ua:7777/currentsong?sid=21")
     }
     
