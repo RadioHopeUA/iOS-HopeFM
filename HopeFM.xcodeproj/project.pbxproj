@@ -59,7 +59,7 @@
 		A5839A621C1ED74100787FDD /* HopeFM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HopeFM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5839A631C1ED7D700787FDD /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "Pods/../build/Debug-iphoneos/AFNetworking.framework"; sourceTree = "<group>"; };
 		A5A4A8EE1C1F169600E2E42F /* HopeFM.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HopeFM.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5A4A8EF1C1F169600E2E42F /* HopeFM.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HopeFM.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5A4A8EF1C1F169600E2E42F /* HopeFM.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = HopeFM.xctest; path = "/Users/anthony/Temp/iOS-HopeFM/build/Debug-iphoneos/HopeFM.xctest"; sourceTree = "<absolute>"; };
 		B034511929E9AAD2F1E97446 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B353C7EF1BFBB1D400DC3CDD /* VolumeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VolumeSlider.swift; sourceTree = "<group>"; };
 		B37C38FC1BCD96DB00FFE25D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -128,7 +128,6 @@
 				A12C6D7D952023AA2BD0C27D /* Pods */,
 				A5839A621C1ED74100787FDD /* HopeFM.app */,
 				A5A4A8EE1C1F169600E2E42F /* HopeFM.xctest */,
-				A5A4A8EF1C1F169600E2E42F /* HopeFM.xctest */,
 				941E3A6709C5542C49FE5D8B /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -136,18 +135,18 @@
 		B37C38FB1BCD96DB00FFE25D /* HopeFM */ = {
 			isa = PBXGroup;
 			children = (
-				B37C38FC1BCD96DB00FFE25D /* AppDelegate.swift */,
-				B37C38FE1BCD96DB00FFE25D /* ViewController.swift */,
-				B38B337D1BD95FAF00F9C8C8 /* Settings.swift */,
-				B353C7EF1BFBB1D400DC3CDD /* VolumeSlider.swift */,
-				B37C39001BCD96DB00FFE25D /* Main.storyboard */,
-				B37C39051BCD96DB00FFE25D /* LaunchScreen.storyboard */,
-				B37C39031BCD96DB00FFE25D /* Assets.xcassets */,
 				B37C39081BCD96DB00FFE25D /* Info.plist */,
-				A5212D341C201A86003F5AFD /* Localizable.strings */,
-				A5212D301C2018D1003F5AFD /* StringExtensions.swift */,
-				A5212D3E1C203849003F5AFD /* RadioPlayer.swift */,
+				B37C38FC1BCD96DB00FFE25D /* AppDelegate.swift */,
 				A5212D421C207279003F5AFD /* ColorExtensions.swift */,
+				A5212D3E1C203849003F5AFD /* RadioPlayer.swift */,
+				B38B337D1BD95FAF00F9C8C8 /* Settings.swift */,
+				A5212D301C2018D1003F5AFD /* StringExtensions.swift */,
+				B37C38FE1BCD96DB00FFE25D /* ViewController.swift */,
+				B353C7EF1BFBB1D400DC3CDD /* VolumeSlider.swift */,
+				B37C39031BCD96DB00FFE25D /* Assets.xcassets */,
+				B37C39051BCD96DB00FFE25D /* LaunchScreen.storyboard */,
+				A5212D341C201A86003F5AFD /* Localizable.strings */,
+				B37C39001BCD96DB00FFE25D /* Main.storyboard */,
 			);
 			name = HopeFM;
 			path = App;
@@ -224,7 +223,7 @@
 				TargetAttributes = {
 					B37C38F81BCD96DB00FFE25D = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = 9P8MWM4C5E;
+						DevelopmentTeam = 78E7V7QP35;
 						SystemCapabilities = {
 							com.apple.InterAppAudio = {
 								enabled = 0;
@@ -487,6 +486,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ua.hope.radio.hopefm;
 				PRODUCT_NAME = HopeFM;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;

@@ -50,7 +50,7 @@
                                                 <inset key="contentEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" image="website"/>
                                                 <connections>
-                                                    <action selector="openWebsite:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mYi-8O-CAU"/>
+                                                    <action selector="onOpenWebsite:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5DB-Lh-gch"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5j0-lq-2WQ" userLabel="btnSocial">
@@ -61,7 +61,7 @@
                                                 <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
                                                 <state key="normal" image="social"/>
                                                 <connections>
-                                                    <action selector="showShare:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xza-Ur-DQU"/>
+                                                    <action selector="onShare:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aV6-EA-WfH"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -114,7 +114,7 @@
                                 <state key="normal" image="play"/>
                                 <state key="selected" image="pause"/>
                                 <connections>
-                                    <action selector="playOrPause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rSf-aa-J8o"/>
+                                    <action selector="onPlay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mTN-9D-Rld"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RFG-Ij-EKB" userLabel="Bottom Container">
@@ -164,7 +164,7 @@
                                         <color key="textColor" red="0.396078431372549" green="0.41960784313725491" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Just listen it..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jvK-Vy-Yff" userLabel="SubText">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Just listen to it..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jvK-Vy-Yff" userLabel="SubText">
                                         <rect key="frame" x="135" y="85" width="330" height="21.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="18"/>
                                         <color key="textColor" red="0.396078431372549" green="0.41960784313725491" blue="0.41176470588235292" alpha="1" colorSpace="calibratedRGB"/>

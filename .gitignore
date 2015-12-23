@@ -1,3 +1,117 @@
-Pods/
-Podfile.lock
-*.xcworkspace
+# Project specific
+
+Pods
+HopeFM.xcworkspace
+
+# Build products
+
+*.[oa]
+DerivedData/
+[Bb]uild/
+[Pp]re-[Bb]uild/
+[Dd]eliverables/
+[Dd]istribution/
+[Dd]ocumentation/
+
+# Backup files
+
+*~
+*~.nib
+*.swp
+*(Autosaved).rtfd/
+Backup[ ]of[ ]*.pages/
+Backup[ ]of[ ]*.key/
+Backup[ ]of[ ]*.numbers/
+
+# Other VCS
+
+.hg
+.svn
+*.prej
+*.mine
+CVS
+
+# OSX
+
+.DS_Store
+.DS_Store?
+._*
+.~*
+~$*
+*.lock
+.AppleDouble
+.LSOverride
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+ehthumbs.db
+Thumbs.db
+.AppleDB
+.AppleDesktop
+.apdisk
+
+# Windows
+
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk
+
+# Xcode
+
+xcuserdata/
+project.xcworkspace/
+*.mode1
+*.mode1v3
+*.mode2v3
+*.perspective
+*.perspectivev3
+*.pbxuser
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+
+# JetBrains
+
+.idea/workspace.xml
+.idea/tasks.xml
+
+# Qt
+
+*.pro.user
+*.autosave
+moc_*
+qrc_*
+ui_*
+
+# CocoaPods
+
+!Podfile.lock
+!Pods/Manifest.lock
+Pods/Documentation
+
+#Carthage
+
+Carthage/
+
+# Gems
+
+!Gemfile.lock
+
+# VersionX
+
+VersionX-revision.h
+
+# SublimeText
+
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
